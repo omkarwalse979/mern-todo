@@ -8,6 +8,7 @@ mongoose.connect(process.env.MONGO_URL)
 const app = express()
 app.use(express.json()) // front-end मधून request.body मध्ये data आणून देतो
 app.use(cors())
+app.use(express.static("public"))
 
 app.post("/api/todo/add", addTodo)
 app.get("/api/todo", getTodo)
