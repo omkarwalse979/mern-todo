@@ -9,10 +9,10 @@ const app = express()
 app.use(express.json()) // front-end मधून request.body मध्ये data आणून देतो
 app.use(cors())
 
-app.post("/todo/add", addTodo)
-app.get("/todo", getTodo)
-app.put("/todo/:id", updateTodo)
-app.put("/todo/:id", deleteTodo)
+app.post("/api/todo/add", addTodo)
+app.get("/api/todo", getTodo)
+app.put("/api/todo/:id", updateTodo)
+app.put("/api/todo/:id", deleteTodo)
 
 mongoose.connection.once("open", () => {
     console.log("MONGO CONNECTED")
